@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { loginMutation } from "../services/auth.api";
 import { useAuthStore } from "../store/auth.store";
 import type { LoginRequest, LoginResponse } from "../types";
-import { toast } from "@/components/ui/toast";
+import { toast } from '@/components/ui/toast';
 
 export const useLogin = () => {
   const navigateTo = useNavigate();
