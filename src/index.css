@@ -1,0 +1,265 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+
+    /* Auth screen colors — single source of truth, see :root below */
+    --color-auth-foreground: var(--auth-foreground);
+    --color-auth-hero: var(--auth-hero);
+    --color-auth-hero-foreground: var(--auth-hero-foreground);
+    --color-auth-hero-badge-foreground: var(--auth-hero-badge-foreground);
+    --color-auth-hero-muted: var(--auth-hero-muted);
+    --color-auth-accent: var(--auth-accent);
+    --color-auth-caption: var(--auth-caption);
+    --color-auth-heading: var(--auth-heading);
+    --color-auth-muted: var(--auth-muted);
+    --color-auth-label: var(--auth-label);
+    --color-auth-icon: var(--auth-icon);
+    --color-auth-icon-muted: var(--auth-icon-muted);
+    --color-auth-input-border: var(--auth-input-border);
+    --color-auth-input-bg: var(--auth-input-bg);
+    --color-auth-input-text: var(--auth-input-text);
+    --color-auth-input-placeholder: var(--auth-input-placeholder);
+    --color-auth-input-focus: var(--auth-input-focus);
+    --color-auth-hover: var(--auth-hover);
+    --color-auth-link: var(--auth-link);
+    --color-auth-button: var(--auth-button);
+    --color-auth-button-hover: var(--auth-button-hover);
+    --color-auth-footer: var(--auth-footer);
+    --color-auth-avatar-1: var(--auth-avatar-1);
+    --color-auth-avatar-2: var(--auth-avatar-2);
+    --color-auth-avatar-3: var(--auth-avatar-3);
+    --color-auth-avatar-4: var(--auth-avatar-4);
+
+    /* Dashboard feature colors — single source of truth, see :root below */
+    --color-dashboard-status: var(--dashboard-status);
+    --color-dashboard-pay-from: var(--dashboard-pay-from);
+    --color-dashboard-pay-via: var(--dashboard-pay-via);
+    --color-dashboard-pay-to: var(--dashboard-pay-to);
+    --color-dashboard-pay-accent: var(--dashboard-pay-accent);
+    --color-dashboard-pay-accent-foreground: var(--dashboard-pay-accent-foreground);
+    --color-dashboard-pay-foreground-muted: var(--dashboard-pay-foreground-muted);
+    --color-dashboard-network-accent: var(--dashboard-network-accent);
+    --color-dashboard-network-accent-foreground: var(--dashboard-network-accent-foreground);
+    --color-dashboard-network-avatar-from: var(--dashboard-network-avatar-from);
+    --color-dashboard-network-avatar-to: var(--dashboard-network-avatar-to);
+    --color-dashboard-send-accent: var(--dashboard-send-accent);
+    --color-dashboard-send-accent-foreground: var(--dashboard-send-accent-foreground);
+    --color-dashboard-opportunities-accent: var(--dashboard-opportunities-accent);
+    --color-dashboard-opportunities-accent-foreground: var(--dashboard-opportunities-accent-foreground);
+    --color-dashboard-learn-accent: var(--dashboard-learn-accent);
+    --color-dashboard-learn-accent-foreground: var(--dashboard-learn-accent-foreground);
+
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    color-scheme: light;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.841 0.238 128.85);
+    --primary-foreground: oklch(0.405 0.101 131.063);
+    --secondary: oklch(0.967 0.001 286.375);
+    --secondary-foreground: oklch(0.21 0.006 285.885);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.897 0.196 126.665);
+    --chart-2: oklch(0.768 0.233 130.85);
+    --chart-3: oklch(0.648 0.2 131.684);
+    --chart-4: oklch(0.532 0.157 131.589);
+    --chart-5: oklch(0.453 0.124 130.933);
+    --radius: 0.45rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.648 0.2 131.684);
+    --sidebar-primary-foreground: oklch(0.986 0.031 120.757);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+
+    /* Auth screen colors */
+    --auth-foreground: #19372f;
+    --auth-hero: #17382f;
+    --auth-hero-foreground: #f7fbf7;
+    --auth-hero-badge-foreground: #e5efe7;
+    --auth-hero-muted: #ecf5ed;
+    --auth-accent: #c2f45d;
+    --auth-caption: #6f991e;
+    --auth-heading: #1b2b25;
+    --auth-muted: #77827c;
+    --auth-label: #33463d;
+    --auth-icon: #78867e;
+    --auth-icon-muted: #849188;
+    --auth-input-border: #dfe6df;
+    --auth-input-bg: #f8faf8;
+    --auth-input-text: #26372f;
+    --auth-input-placeholder: #a0aaa3;
+    --auth-input-focus: #6f9e80;
+    --auth-hover: #edf3ed;
+    --auth-link: #244f3d;
+    --auth-button: #1c4c3b;
+    --auth-button-hover: #143d2f;
+    --auth-footer: #9aa39d;
+    --auth-avatar-1: #d8e7c2;
+    --auth-avatar-2: #edc9a8;
+    --auth-avatar-3: #b8d6d2;
+    --auth-avatar-4: #45695a;
+
+    /* Auth screen composite values (borders/shadows/gradients with baked-in alpha) */
+    --auth-card-border: rgb(28 57 47 / 8%);
+    --auth-card-shadow: rgb(29 47 39 / 10%);
+    --auth-hero-glow: rgb(130 180 72 / 24%);
+    --auth-accent-shadow: rgb(194 244 93 / 22%);
+    --auth-accent-glow: rgb(194 244 93 / 60%);
+    --auth-input-ring: rgb(53 113 80 / 12%);
+    --auth-button-shadow: rgb(28 76 59 / 17%);
+    --auth-button-shadow-hover: rgb(28 76 59 / 22%);
+
+    /* Dashboard feature colors, aliased to the default Tailwind palette so there is one place to retune a feature's brand color */
+    --dashboard-status: var(--color-lime-600);
+    --dashboard-pay-from: var(--color-emerald-950);
+    --dashboard-pay-via: var(--color-emerald-900);
+    --dashboard-pay-to: var(--color-emerald-800);
+    --dashboard-pay-accent: var(--color-lime-300);
+    --dashboard-pay-accent-foreground: var(--color-emerald-950);
+    --dashboard-pay-foreground-muted: var(--color-emerald-100);
+    --dashboard-network-accent: var(--color-violet-100);
+    --dashboard-network-accent-foreground: var(--color-violet-600);
+    --dashboard-network-avatar-from: var(--color-violet-400);
+    --dashboard-network-avatar-to: var(--color-violet-600);
+    --dashboard-send-accent: var(--color-lime-100);
+    --dashboard-send-accent-foreground: var(--color-lime-700);
+    --dashboard-opportunities-accent: var(--color-sky-100);
+    --dashboard-opportunities-accent-foreground: var(--color-sky-600);
+    --dashboard-learn-accent: var(--color-orange-100);
+    --dashboard-learn-accent-foreground: var(--color-orange-600);
+}
+
+.dark {
+    color-scheme: dark;
+    --background: oklch(0.135 0.022 158);
+    --foreground: oklch(0.94 0.018 145);
+    --card: oklch(0.195 0.02 158);
+    --card-foreground: oklch(0.94 0.018 145);
+    --popover: oklch(0.205 0.022 158);
+    --popover-foreground: oklch(0.94 0.018 145);
+    --primary: oklch(0.768 0.233 130.85);
+    --primary-foreground: oklch(0.405 0.101 131.063);
+    --secondary: oklch(0.25 0.022 158);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.24 0.018 158);
+    --muted-foreground: oklch(0.72 0.018 150);
+    --accent: oklch(0.25 0.025 158);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(0.8 0.04 155 / 16%);
+    --input: oklch(0.8 0.04 155 / 20%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.897 0.196 126.665);
+    --chart-2: oklch(0.768 0.233 130.85);
+    --chart-3: oklch(0.648 0.2 131.684);
+    --chart-4: oklch(0.532 0.157 131.589);
+    --chart-5: oklch(0.453 0.124 130.933);
+    --sidebar: oklch(0.17 0.022 158);
+    --sidebar-foreground: oklch(0.94 0.018 145);
+    --sidebar-primary: oklch(0.768 0.233 130.85);
+    --sidebar-primary-foreground: oklch(0.274 0.072 132.109);
+    --sidebar-accent: oklch(0.25 0.025 158);
+    --sidebar-accent-foreground: oklch(0.94 0.018 145);
+    --sidebar-border: oklch(0.8 0.04 155 / 16%);
+    --sidebar-ring: oklch(0.556 0 0);
+
+    /* Auth surfaces retain the green brand while adapting the form panel for dark mode. */
+    --auth-foreground: #e2eee7;
+    --auth-caption: #b8d982;
+    --auth-heading: #edf5ef;
+    --auth-muted: #a5b3aa;
+    --auth-label: #d2ded5;
+    --auth-icon: #9cac9f;
+    --auth-icon-muted: #9cac9f;
+    --auth-input-border: #3a4d42;
+    --auth-input-bg: #1b2922;
+    --auth-input-text: #e6f0e8;
+    --auth-input-placeholder: #829187;
+    --auth-input-focus: #9bc6a5;
+    --auth-hover: #27382e;
+    --auth-link: #c1e1ca;
+    --auth-card-border: rgb(226 240 230 / 8%);
+    --auth-card-shadow: rgb(0 0 0 / 35%);
+}
+
+.dark body {
+    background-image:
+        radial-gradient(ellipse at 50% -20%, rgb(16 185 129 / 13%), transparent 52%),
+        radial-gradient(ellipse at 100% 20%, rgb(132 204 22 / 6%), transparent 36%);
+    background-attachment: fixed;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+    }
+  html {
+    @apply font-sans;
+    }
+}
